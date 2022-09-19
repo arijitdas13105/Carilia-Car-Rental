@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { GET_ALL_CARS } from '../../constants/allConstant'
+import { GET_ALL_CARS,CAR_LIST_REQUEST } from '../../constants/allConstant'
 
 export const getAllCars=()=>async dispatch=>{
       try {
+        dispatch({type:CAR_LIST_REQUEST})
         const response = await axios.get('https://carilia.herokuapp.com/api/cars/getallcars')
         dispatch({   type:GET_ALL_CARS, payload:response.data  })
       } catch (error) {

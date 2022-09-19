@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllCars } from "../redux/actions/carsActions";
 import { bookCar } from "../redux/actions/bookingActions";
 import axios from "axios";
+import Loading from "../components/Loading";
 
 const { RangePicker } = DatePicker;
 
@@ -20,7 +21,7 @@ const BookingCar = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [driver, setdriver] = useState(false);
 
-  const { cars } = useSelector((state) => state.carsReducer);
+  const { cars ,loading} = useSelector((state) => state.carsReducer);
   useEffect(() => {
     if (cars.length == 0) {
       dispatch(getAllCars());
@@ -58,7 +59,11 @@ const BookingCar = () => {
   }
 
   return (
-    <div>
+    <>
+       {
+      loading?(<Loading/>):(
+        <>
+          <div>
       <div className="productD-wrapper">
         {/* card left */}
         <div className="productD-left">
@@ -116,7 +121,7 @@ const BookingCar = () => {
                  
 
                   <button className="btn1" onClick={bookNow}>
-                    Book Nowa
+                    Book Now
                   </button>
                 </div>
               )}
@@ -129,6 +134,13 @@ const BookingCar = () => {
         </div>
       </div>
     </div>
+        </>
+      )
+    }
+    </>
+
+   
+    
   );
 };
 

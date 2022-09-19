@@ -8,12 +8,13 @@ import { getAllCars, searchCars, sortCars } from "../redux/actions/carsActions";
 import { Link } from "react-router-dom";
 import { Input, Modal, Form, Select, Button } from "antd";
 import { FilterOutlined } from "@ant-design/icons";
+import Loading from "../components/Loading";
 const { Search } = Input;
 const { Option } = Select;
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { cars } = useSelector((state) => state.carsReducer);
+  const { cars ,loading} = useSelector((state) => state.carsReducer);
   console.log("====================================");
   console.log(cars);
   console.log("====================================");
@@ -41,7 +42,11 @@ const Home = () => {
   }
   return (
     <>
-      <div className="sortAndSearch">
+     
+      {
+        loading?(<Loading/>):(
+          <>
+          <div className="sortAndSearch">
         <Search
           className="search-box"
           enterButton
@@ -75,7 +80,8 @@ const Home = () => {
           <Button htmlType="submit">Filter</Button>
         </Form>
       </Modal>
-      <div className="gallery">
+            <div className="gallery">
+      
         {cars.map((car,index) => {
           return (
             <>
@@ -94,6 +100,11 @@ const Home = () => {
           );
         })}
       </div>
+          </>
+
+        )
+      }
+      
     </>
   );
 };

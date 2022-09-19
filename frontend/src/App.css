@@ -75,12 +75,12 @@
 }
 .single-car-details-item  img{
 
-width: 33rem;
+width: auto;
 
 height: 25rem;
 
 object-fit:cover;
-  padding-right: 20px;
+ padding-right: 20px;
   
   
 
@@ -88,11 +88,18 @@ object-fit:cover;
 .product-info{
 display: flex;
 flex-direction: column;
-border: 1px solid silver;
+border: 1px solid black;
 width: 60%;
 padding-left: 30px;
 padding-top: 30px;
 }
+.product-name-details{
+  /* font-size: 14px; */
+  font-family: 'Courier New', Courier, monospace;
+}
+.product-info h3{
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  }
 .product-info p {
   text-decoration:dashed ;
 }
@@ -102,8 +109,16 @@ text-decoration: underline;
 }
 
 
-
-
+/* ////////// register and login */
+.ant-form{
+  width: 50%;
+}
+.ant-form h1{
+  /* font-size: 70px; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  color: #020c21;
+}
 
 .gallery{
 display: grid;
@@ -227,9 +242,37 @@ font-weight: BOLD;
   border-radius: 50%;
 
 }
+.loading{
+  height: 100vh;
+  
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
 
+.container{
+  /* margin-top: 150px; */
+  /* padding: 10px 0px; */
+  
+}
+.navbar .navbar-brand{
+  font-size: 30px;
+}
+.navbar .me-auto{
+  font-size: 19px;
+  margin-left: 30px;
+
+
+}.navbar .nav-link{
+  text-decoration: underline;
+}
 
                /* //  ////////////// */
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -263,4 +306,176 @@ font-weight: BOLD;
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+/* /////////////////     MOBILE DEVICES   /////////////////          */
+@media only screen and (max-width: 850px){
+
+  .productD-wrapper{
+    /* display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 50px; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+.paddingD-left{
+    display: flex;
+   
+}
+.productD-img-display{
+    width: 100%;
+   padding: 0px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    /* background: whitesmoke; */
+    background: red;
+}
+.productD-img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.rangePicker{
+  width: 100%;
+}
+.ant-calendar-picker {
+  width: auto !important;
+}
+.ant-picker-time-panel{
+  /* background: red; */
+  width: auto !important;
+ margin-left: -15px;
+}
+
+/* /////////  USER BOOKINGS //////////*/
+
+.car-details-container{
+  display: flex;
+  background: none;
+  flex-direction: column;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+.car-details-items{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  width: auto;
+  /* background: pink; */
+}   
+.single-car-details-item{  
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+   border: 0.5px solid rgb(173, 168, 168);
+   margin: 10px;
+   border-radius: 10px;
+   /* background: rgb(202, 110, 110);  */
+}
+.single-car-details-image{
+  width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+.single-car-details-image img{
+  width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.product-info{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid black;
+  width: auto;
+  padding-left: 10px;
+  text-align: center;
+  
+}
+.product-info {
+
+
+  /* width: 50px; */
+  
+
+  padding: 10px 25px ;
+  
+ 
+  /* background-color: pink; */
+
+  color: white;
+
+  cursor: pointer;
+border: 1px solid black;
+  border-radius: 5px;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 10px 0px 10px 0px;
+  
+}
+ .product-name-details{
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ant-form{
+  width: auto;
+}
+.ant-form h1{
+  /* font-size: 70px; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  color: #020c21;
+}
+.sortAndSearch{
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px 15px;
+  /* gap: 30px; */
+  /* background: red; */
+}
+ .search-box{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* width: 200px; */
+  padding-left: 10px;
+  /* margin-top: 30px; */
+  /* margin-right: 50px; */
+  /* background: green; */
+
+}
+
+.ant-input{
+  width: 100%;
+  margin: 10px;
+}
+}
+.container{
+  /* margin-top: 150px; */
+  /* padding: 10px 0px; */
+  
+}
+.navbar .navbar-brand{
+  font-size: 20px;
+}
+.navbar .me-auto{
+  font-size: 14px;
+  margin-left: 0px;
+  
+
+
+}.navbar .nav-link{
+  text-decoration: underline;
 }

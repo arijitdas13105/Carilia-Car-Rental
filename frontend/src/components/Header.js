@@ -13,14 +13,14 @@ const Header = () => {
   };
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className="header">
         <Container>
           <Navbar.Brand href="/">CARILIA</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/userbookings">Booking</Nav.Link>
             {user ? (
-              <Nav.Link onClick={logout}>{user.username} (Logout) </Nav.Link>
+              <Nav.Link onClick={logout}className="nav-link-show"  >{user.username} (Logout) </Nav.Link>
             ) : (
               <Nav.Link href="/login">Log in</Nav.Link>
             )}

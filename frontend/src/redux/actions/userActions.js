@@ -5,7 +5,7 @@ import {message,Alert } from 'antd'
 export const userRegister=(reqObj)=>async dispatch=>{
     try {
         
-        const response= await axios.post('api/users/register',reqObj)
+        const response= await axios.post('https://carilia.herokuapp.com/api/users/register',reqObj)
         if(response){
             message.success('registration  success')
         setTimeout(() => {
@@ -24,7 +24,7 @@ export const userRegister=(reqObj)=>async dispatch=>{
 export const userLogin=(reqObj)=>async dispatch=>{
 
     try {
-        const response= await axios.post('api/users/login',reqObj);
+        const response= await axios.post('https://carilia.herokuapp.com/api/users/login',reqObj);
      
         localStorage.setItem('user',JSON.stringify(response.data))
        message.success('Login success')

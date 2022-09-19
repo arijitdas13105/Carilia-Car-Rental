@@ -6,7 +6,7 @@ export const bookCar = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
 
   try {
-    await axios.post("/api/bookings/bookcar", reqObj);
+    await axios.post("https://carilia.herokuapp.com/api/bookings/bookcar", reqObj);
 
     message.success("Your car booked successfully");
     setTimeout(() => {
@@ -19,7 +19,7 @@ export const bookCar = (reqObj) => async (dispatch) => {
 };
 export const getallBookings = () => async (dispatch) => {
   try {
-    const response = await axios.get("/api/bookings/getallbookings");
+    const response = await axios.get("https://carilia.herokuapp.com/api/bookings/getallbookings");
     dispatch({ type: GET_ALL_BOOKINGS, payload: response.data });
   } catch (error) {
     console.log(error);

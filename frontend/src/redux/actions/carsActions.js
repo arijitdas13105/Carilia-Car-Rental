@@ -3,7 +3,7 @@ import { GET_ALL_CARS } from '../../constants/allConstant'
 
 export const getAllCars=()=>async dispatch=>{
       try {
-        const response = await axios.get('/api/cars/getallcars')
+        const response = await axios.get('https://carilia.herokuapp.com/api/cars/getallcars')
         dispatch({   type:GET_ALL_CARS, payload:response.data  })
       } catch (error) {
           console.log(error);
@@ -13,7 +13,7 @@ export const getAllCars=()=>async dispatch=>{
 
  export const searchCars=(searchKey)=>async  (dispatch)=>{
   try {
-    const response= await axios.get('/api/cars/getallcars')
+    const response= await axios.get('https://carilia.herokuapp.com/api/cars/getallcars')
     const cars= response.data
     const filteredCars = cars.filter(car=>car.brand.toLowerCase().includes(searchKey.toLowerCase()))
     dispatch({type:GET_ALL_CARS,payload:filteredCars})
@@ -24,7 +24,7 @@ export const getAllCars=()=>async dispatch=>{
 
  export const sortCars=(values)=>async (dispatch) =>{
   try {
-    const response= await axios.get('/api/cars/getallcars')
+    const response= await axios.get('https://carilia.herokuapp.com/api/cars/getallcars')
     const cars= response.data
     var filteredCars = cars
 

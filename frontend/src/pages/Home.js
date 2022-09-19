@@ -76,10 +76,10 @@ const Home = () => {
         </Form>
       </Modal>
       <div className="gallery">
-        {cars.map((car) => {
+        {cars.map((car,index) => {
           return (
             <>
-              <div className="car-content">
+              <div key={index} className="car-content">
                 <Link to={`/booking/${car._id}`}>
                   <img src={car.image} alt="car-image" className="car-image" />
                 </Link>
